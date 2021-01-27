@@ -1,0 +1,72 @@
+<br>
+<ng-container *ngIf="lista.length > 0">
+    <div class="alerta error" *ngFor="let erro of lista">
+        O campo {{ erro.param.toUpperCase() }} {{ erro.msg }}
+    </div>
+</ng-container>
+
+<label for="id">ID*</label>
+<input name="id" id="id" type="text" [(ngModel)]="cliente.id">
+
+<label for="nome">Nome*</label>
+<input name="nome" id="nome" type="text" [(ngModel)]="cliente.nome">
+
+<label for="sobrenome">Sobrenome*</label>
+<input name="sobrenome" id="sobrenome" type="text" [(ngModel)]="cliente.sobrenome">
+
+<label for="senha">Senha*</label>
+<input name="senha" id="senha" type="password" [(ngModel)]="cliente.senha">
+
+<label for="email">Email*</label>
+<input name="email" id="email" type="email" [(ngModel)]="cliente.email">
+
+<label for="sexo">Sexo</label>
+<select type="text" name="sexo" id="sexo" [(ngModel)]="cliente.sexo" [ngSwitch]="cliente.sexo">
+    *ngSwitchCase="'M'"
+        <option value="M" selected>Masculino</option>
+    *ngSwitchCase="'F'"
+        <option value="F" selected>Feminino</option>
+    *ngSwitchCase="'O'"
+        <option value="O" selected>Outro</option>
+    *ngSwitchDefault
+        <option value="" selected>Selecione</option>
+</select>
+
+<label for="cpf">CPF</label>
+<input name="cpf" id="cpf" type="text" [(ngModel)]="cliente.cpf">
+
+<label for="rg">RG</label>
+<input name="rg" id="rg" type="text" [(ngModel)]="cliente.rg">
+
+<label for="telefone">Telefone</label>
+<input name="telefone" id="telefone" type="text" [(ngModel)]="cliente.telefone">
+
+<label for="data_de_nascimento">Data de Nascimento</label>
+<input name="data_de_nascimento" id="data_de_nascimento" type="date" [(ngModel)]="cliente.data_de_nascimento">
+
+<label for="estadoCivil">Estado Civil</label>
+<select name="estado_civil" id="estado_civil" [(ngModel)]="cliente.estado_civil" [ngSwitch]="cliente.estado_civil">
+    *ngSwitchCase="'1'"
+        <option value="1" selected>Solteiro</option>
+    *ngSwitchCase="'2'"
+        <option value="2" selected>Casado</option>
+    *ngSwitchCase="'3'"
+        <option value="3" selected>Divorciado</option>
+    *ngSwitchCase="'4'"
+        <option value="4" selected>Viúvo</option>
+    *ngSwitchCase="'5'"
+        <option value="5" selected>Separado</option>
+    *ngSwitchDefault
+        <option value="" selected>Selecione</option>
+</select>
+
+<label for="cep">CEP</label>
+<input name="cep" id="cep" type="text" [(ngModel)]="cliente.cep">
+
+<label for="endereco">Endereço</label>
+<textarea name="endereco" id="endereco" rows="6" cols="23" [(ngModel)]="cliente.endereco"> </textarea>
+
+<div id="div-botoes">
+<button id="salvar" (click)="salvar()">Salvar</button>
+<button id="voltar" [routerLink]="['/lista-cliente']">Cancelar</button>
+</div>

@@ -1,0 +1,57 @@
+<br>
+<button [routerLink]="[ '/cadastro-cliente']">Novo</button>
+
+<div id="div-tabela"> 
+
+  <h1>Clientes</h1>
+
+  <table class="table-clientes">
+      <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Email</th>
+          <th>Sexo</th>
+          <th>CPF</th>
+          <th>RG</th>
+          <th>Telefone</th>
+          <th>Data de Nascimento</th>
+          <th>Estado Civil</th>
+          <th>CEP</th>
+          <th>Endereço</th>
+          <th colspan="2">Opções</th>
+      </tr>
+      <tr *ngFor="let cliente of lista">
+          <td class="td-campos">{{ cliente.id }}</td>
+          <td class="td-campos">{{ cliente.nome }}</td>
+          <td class="td-campos">{{ cliente.sobrenome }}</td>
+          <td class="td-campos">{{ cliente.email }}</td>
+
+          <ng-container [ngSwitch]="cliente.sexo">
+            <td class="td-campos" *ngSwitchCase="'F'">Feminino</td>
+            <td class="td-campos" *ngSwitchCase="'M'">Masculino</td>
+            <td class="td-campos" *ngSwitchCase="'O'">Outro</td>
+            <td class="td-campos" *ngSwitchDefault></td>
+          </ng-container>
+
+          <td class="td-campos">{{ cliente.cpf }}</td>
+          <td class="td-campos">{{ cliente.rg }}</td>
+          <td class="td-campos">{{ cliente.telefone }}</td>
+          <td class="td-campos">{{ cliente.data_de_nascimento }}</td>
+          
+          <ng-container [ngSwitch]="cliente.estado_civil">
+            <td class="td-campos" *ngSwitchCase="'1'">Solteiro</td>
+            <td class="td-campos" *ngSwitchCase="'2'">Casado</td>
+            <td class="td-campos" *ngSwitchCase="'3'">Divorciado</td>
+            <td class="td-campos" *ngSwitchCase="'4'">Viúvo</td>
+            <td class="td-campos" *ngSwitchCase="'5'">Separado</td>
+            <td class="td-campos" *ngSwitchDefault></td>
+          </ng-container>
+
+          <td class="td-campos">{{ cliente.cep }}</td>
+          <td class="td-campos">{{ cliente.endereco }}</td>
+          <td id="opcao1" class="td-campos"><a [routerLink]="[ '/cadastro-cliente', cliente.id ]"><img src="assets/images/editar.png"></a></td>
+          <td id="opcao2" class="td-campos"><a href="/lista-cliente" (click)="excluir(cliente)"><img src="assets/images/deletar.png"></a></td>
+      </tr>
+  </table>
+</div>

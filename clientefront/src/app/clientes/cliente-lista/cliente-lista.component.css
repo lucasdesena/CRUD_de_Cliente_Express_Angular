@@ -1,0 +1,27 @@
+table-clientes{
+    width: 100%;
+    padding: 2px;
+    border: 2px solid black;
+}
+
+.table-clientes,
+th {
+    padding: 2px;
+    border: 2px solid black;
+}
+
+.td-campos{
+    padding: 2px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#opcao1{
+    padding-right: 5px;
+    text-align: right;
+}
+
+#opcao2{
+    padding-left: 5px;
+    text-align: left;
+}

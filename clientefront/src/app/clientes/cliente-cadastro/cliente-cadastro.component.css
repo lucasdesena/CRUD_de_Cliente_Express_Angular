@@ -1,0 +1,54 @@
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    display: block;
+    width: 177px;
+}
+
+select {
+    display: block;
+    width: 182px;
+    height: 24px;
+}
+
+textarea {
+    resize: none;
+}
+
+#salvar{
+    float: left;
+    width: 85px;
+}
+
+#voltar{
+    float: left;
+    margin-left: 10px;
+    width: 90px;
+}
+
+#div-botoes{
+    margin-top: 10px;
+    height: 30px;
+}
+
+.mensagens{
+    margin-top: 15px;
+}
+
+.alerta {
+	padding: 10px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.error {
+	border-color: #e8273b;
+	color: #FFF;
+    background-color: #ed5565;
+    width: 165px;
+}
